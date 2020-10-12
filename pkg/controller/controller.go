@@ -147,6 +147,9 @@ func (ctrl Controller) Run(ctx context.Context, wd string) error {
 	if err != nil {
 		return err
 	}
+	if err := config.ConvertConfig(ctrl.Config); err != nil {
+		return fmt.Errorf("format config: %w", err)
+	}
 	for _, entry := range ctrl.Config.Entries {
 		err := ctrl.testEntry(wd, entry, testErrorTpl)
 		if err != nil {
