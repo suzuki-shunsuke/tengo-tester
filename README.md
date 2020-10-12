@@ -1,5 +1,10 @@
 # tengo-tester
 
+[![Build Status](https://github.com/suzuki-shunsuke/tengo-tester/workflows/CI/badge.svg)](https://github.com/suzuki-shunsuke/tengo-tester/actions)
+[![Go Report Card](https://goreportcard.com/badge/github.com/suzuki-shunsuke/tengo-tester)](https://goreportcard.com/report/github.com/suzuki-shunsuke/tengo-tester)
+[![GitHub last commit](https://img.shields.io/github/last-commit/suzuki-shunsuke/tengo-tester.svg)](https://github.com/suzuki-shunsuke/tengo-tester)
+[![License](http://img.shields.io/badge/license-mit-blue.svg?style=flat-square)](https://raw.githubusercontent.com/suzuki-shunsuke/tengo-tester/master/LICENSE)
+
 CLI to test a Tengo script
 
 ## Overview
