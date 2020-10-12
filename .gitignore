@@ -1,0 +1,6 @@
+dist/*
+.code-climate
+bin/*
+.git-rm-branch.yml
+.tengo-tester.yaml
+.envrc
