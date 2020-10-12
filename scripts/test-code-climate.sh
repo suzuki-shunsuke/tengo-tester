@@ -33,6 +33,10 @@ for d in $(go list ./...); do
 done
 
 result=.code-climate/codeclimate.total.json
+if [ 0 -eq "$(find .code-climate -name coverage.json | wc -l)" ]; then
+  echo "no test found" >&2
+  exit 0
+fi
 # shellcheck disable=SC2046
 ee cc-test-reporter sum-coverage $(find .code-climate -name coverage.json) -o "$result"
 ee cc-test-reporter upload-coverage -i "$result"
