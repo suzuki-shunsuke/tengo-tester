@@ -123,6 +123,36 @@ If the confgiuration file path isn't specified, the file named `.tengo-tester.ym
 There are some configuration which are file paths.
 If a file path is a relative path, the base directory of the relative path is the directory where the configuration file exists.
 
+## The type of map key should be string in entry.params and test.equal
+
+`entry.params` and `test.equal` is a variable of a Tengo script.
+The type of map key of Tengo script should be string.
+
+https://github.com/d5/tengo/blob/master/docs/tutorial.md#values-and-value-types
+
+So the test fails if the map key whose type isn't string is found.
+
+ex.
+
+```yaml
+---
+entries:
+- name: main
+  script_file: foo.tengo
+  params:
+    foo:
+      true: 1 # the key is boolean
+  tests:
+  - name: test
+    var_name: result
+    equal: hello
+```
+
+```
+$ tengo-tester run
+FATA[0000] format config: convert entry.params: entry_name: main: key: foo: the map key should be string : true
+```
+
 ## LICENSE
 
 [MIT](LICENSE)
