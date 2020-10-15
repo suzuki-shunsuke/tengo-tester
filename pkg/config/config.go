@@ -2,6 +2,8 @@ package config
 
 import (
 	"fmt"
+
+	"github.com/suzuki-shunsuke/go-convmap/convmap"
 )
 
 type Config struct {
@@ -29,14 +31,14 @@ type Test struct {
 func ConvertConfig(cfg Config) error {
 	for i, entry := range cfg.Entries {
 		for k, v := range entry.Params {
-			p, err := ConvertMapKey(v)
+			p, err := convmap.Convert(v)
 			if err != nil {
 				return fmt.Errorf("convert entry.params: entry_name: %s: key: %s: %w", entry.Name, k, err)
 			}
 			entry.Params[k] = p
 		}
 		for j, test := range entry.Tests {
-			p, err := ConvertMapKey(test.Equal)
+			p, err := convmap.Convert(test.Equal)
 			if err != nil {
 				return fmt.Errorf("convert test.Equal: entry_name: %s: test_name: %s: %w", entry.Name, test.Name, err)
 			}
@@ -46,34 +48,4 @@ func ConvertConfig(cfg Config) error {
 		cfg.Entries[i] = entry
 	}
 	return nil
-}
-
-func ConvertMapKey(data interface{}) (interface{}, error) {
-	switch t := data.(type) {
-	case map[interface{}]interface{}:
-		m := make(map[string]interface{}, len(t))
-		for k, v := range t {
-			s, ok := k.(string)
-			if !ok {
-				return nil, fmt.Errorf("the map key should be string: %+v", k)
-			}
-			val, err := ConvertMapKey(v)
-			if err != nil {
-				return nil, fmt.Errorf("key: %s: %w", s, err)
-			}
-			m[s] = val
-		}
-		return m, nil
-	case []interface{}:
-		for i, v := range t {
-			val, err := ConvertMapKey(v)
-			if err != nil {
-				return nil, fmt.Errorf("index: %d: %w", i, err)
-			}
-			t[i] = val
-		}
-		return t, nil
-	default:
-		return data, nil
-	}
 }
