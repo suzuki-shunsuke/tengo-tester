@@ -35,8 +35,29 @@ func (prog Program) Run(params map[string]interface{}) (map[string]interface{}, 
 	vars := compiled.GetAll()
 	m := make(map[string]interface{}, len(vars))
 	for _, v := range vars {
-		m[v.Name()] = v.Value()
+		m[v.Name()] = convertInt64ToInt(v.Value())
 	}
 
 	return m, nil
+}
+
+func convertInt64ToInt(data interface{}) interface{} {
+	switch t := data.(type) {
+	case map[string]interface{}:
+		m := make(map[string]interface{}, len(t))
+		for k, v := range t {
+			m[k] = convertInt64ToInt(v)
+		}
+		return m
+	case []interface{}:
+		arr := make([]interface{}, len(t))
+		for i, v := range t {
+			arr[i] = convertInt64ToInt(v)
+		}
+		return arr
+	case int64:
+		return int(t)
+	default:
+		return data
+	}
 }
