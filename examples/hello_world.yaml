@@ -1,0 +1,33 @@
+---
+entries:
+- name: main
+  script_file: hello_world.tengo
+  tests:
+  - name: test
+    var_name: result
+    equal: 1
+- name: params
+  script_file: params.tengo
+  params:
+    value:
+      message: hello
+  tests:
+  - name: test
+    var_name: result
+    equal:
+      foo:
+        message: hello
+  - name: use Tengo script for test
+    script: |
+      fmt := import("fmt")
+      err_msg := ""
+      exp := {
+        foo: {
+          message: "hello"
+        }
+      }
+      if result.result != exp {
+        err_msg = fmt.sprintf("the variable 'value' is invalid: wanted %+v, got %+v", exp, result.result)
+      }
+  - name: read Tengo script from a file
+    script_file: params_test.tengo
