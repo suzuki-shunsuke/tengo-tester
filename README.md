@@ -87,6 +87,20 @@ FATA[0000]
 exit status 1
 ```
 
+## Examples
+
+Please see [examples](examples).
+
+On the directory, there are some examples of configuration files.
+
+We can execute the test with them.
+
+For example,
+
+```
+$ tengo-tester run -c examples/hello_world.yaml
+```
+
 ## Configuration Reference
 
 ```yaml

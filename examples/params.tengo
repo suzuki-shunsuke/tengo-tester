@@ -1,0 +1,5 @@
+result := func(value) {
+  return {
+    "foo": value
+  }
+}(value)
