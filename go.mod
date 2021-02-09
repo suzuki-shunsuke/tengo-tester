@@ -7,7 +7,7 @@ require (
 	github.com/google/go-cmp v0.5.4
 	github.com/sirupsen/logrus v1.7.0
 	github.com/suzuki-shunsuke/go-convmap v0.1.0
-	github.com/suzuki-shunsuke/go-findconfig v0.1.0
+	github.com/suzuki-shunsuke/go-findconfig v1.0.0
 	github.com/urfave/cli/v2 v2.3.0
 	gopkg.in/yaml.v2 v2.4.0
 )
