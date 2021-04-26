@@ -4,7 +4,7 @@ go 1.15
 
 require (
 	github.com/d5/tengo/v2 v2.6.2
-	github.com/google/go-cmp v0.5.4
+	github.com/google/go-cmp v0.5.5
 	github.com/sirupsen/logrus v1.7.0
 	github.com/suzuki-shunsuke/go-convmap v0.1.0
 	github.com/suzuki-shunsuke/go-findconfig v0.1.0
