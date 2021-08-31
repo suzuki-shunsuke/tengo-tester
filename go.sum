@@ -19,8 +19,8 @@ github.com/stretchr/testify v1.2.2 h1:bSDNvY7ZPG5RlJ8otE/7V6gMiyenm9RtJ7IUVIAoJ1
 github.com/stretchr/testify v1.2.2/go.mod h1:a8OnRcib4nhh0OaRAV+Yts87kKdq0PP7pXfy6kDkUVs=
 github.com/suzuki-shunsuke/go-convmap v0.1.0 h1:0qzSC9IAzYdylNJvgzFpxbD/KeWpuVM608d/S0VjYsU=
 github.com/suzuki-shunsuke/go-convmap v0.1.0/go.mod h1:S0yDqBPFU0lmlHhoMKNSSHDRt87tUyI+KY/fBuXNn14=
-github.com/suzuki-shunsuke/go-findconfig v0.1.0 h1:ORAMPULNwus1kIvhcHaubo0Pw1ehlgRbSAxmAJL7KI4=
-github.com/suzuki-shunsuke/go-findconfig v0.1.0/go.mod h1:u/0Zz6/GDE6G0gofzVhR9UPOIKLSUoDMjUoFWqOoVlg=
+github.com/suzuki-shunsuke/go-findconfig v1.0.0 h1:RSETNCdYurpepqz/z9iM8DzJKK6TbvtV63ZVCIXaxkI=
+github.com/suzuki-shunsuke/go-findconfig v1.0.0/go.mod h1:u/0Zz6/GDE6G0gofzVhR9UPOIKLSUoDMjUoFWqOoVlg=
 github.com/urfave/cli/v2 v2.3.0 h1:qph92Y649prgesehzOrQjdWyxFOp/QVM+6imKHad91M=
 github.com/urfave/cli/v2 v2.3.0/go.mod h1:LJmUH05zAU44vOAcrfzZQKsZbVcdbOG8rtL3/XcUArI=
 golang.org/x/sys v0.0.0-20191026070338-33540a1f6037 h1:YyJpGZS1sBuBCzLAR1VEpK193GlqGZbnPFnPV/5Rsb4=
